@@ -20,8 +20,8 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href={{ URL::asset('vendor/select2/select2.min.css')}}>
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ URL::asset('css/util.css')}}>
-    <link rel="stylesheet" type="text/css" href={{ URL::asset('css/main.css')}}>
+    <link rel="stylesheet" type="text/css" href={{ URL::asset('css/login/util.css')}}>
+    <link rel="stylesheet" type="text/css" href={{ URL::asset('css/login/main.css')}}>
     <!--===============================================================================================-->
 </head>
 <body>
@@ -29,10 +29,10 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-            <form class="login100-form validate-form" action="{{ route('login') }}" method="POST" >
+            <form class="login100-form validate-form" action="{{ route('login') }}" method="POST">
                 @csrf()
 
-					<span class="login100-form-title p-b-55">
+                <span class="login100-form-title p-b-55">
 						Login
 					</span>
 
@@ -77,7 +77,7 @@
                 </a>
 
                 <a href="#" class="btn-google m-b-10">
-                    <img src="images/icons/icon-google.png" alt="GOOGLE">
+                    <img src={{asset('images/icons/icon-google.png')}} alt="GOOGLE">
                     Google
                 </a>
 
@@ -96,8 +96,6 @@
 </div>
 
 
-
-
 <!--===============================================================================================-->
 <script src={{ URL::asset('vendor/jquery/jquery-3.2.1.min.js')}}></script>
 <!--===============================================================================================-->
@@ -106,7 +104,7 @@
 <!--===============================================================================================-->
 <script src={{ URL::asset('vendor/select2/select2.min.js')}}></script>
 <!--===============================================================================================-->
-<script src={{ URL::asset('js/main.js')}}></script>
+<script src={{ URL::asset('js/login/main.js')}}></script>
 
 </body>
 </html>

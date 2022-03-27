@@ -16,10 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('user',function() {
-    return auth()->user();
+
+
+Route::get('login',[\App\Http\Controllers\AuthController::class,'index']);
+Route::post('login',[\App\Http\Controllers\AuthController::class,'login'])->name('login');
+Route::get('logout',[\App\Http\Controllers\AuthController::class,'logout'])->name('logout');
+
+Route::resource('users',\App\Http\Controllers\UserController::class);
+
+Route::prefix('panel')->middleware(['auth'])->group(function () {
+    Route::get('/',function () {
+        return view('panel.index');
+    });
+
 });
 
-Route::get('login',[\App\Http\Controllers\UserController::class,'index']);
-Route::post('login',[\App\Http\Controllers\UserController::class,'login'])->name('login');
-Route::get('create',[\App\Http\Controllers\UserController::class,'create']);
+
+
